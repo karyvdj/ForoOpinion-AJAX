@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>FORO</title>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
   	<link rel="stylesheet" href="css/materialize.min.css">
   </head>
   <body>
@@ -16,7 +17,7 @@
         <a href="#" class="brand-logo center valign-wrapper">
   				Foro Lab
   			</a>
-        <div class="nav-wrapper col s3 ">
+        <div class="nav-wrapper waves-effect waves-light col m3 s10 ">
           <form id="busqueda">
             <div class="input-field" >
               <input id="buscar" type="search" required>
@@ -31,14 +32,16 @@
       </div>
     </nav>
 
-    <table class="bordered container">
-      <thead>
-        <th>Tema</th>
-        <th>Autor</th>
-        <th>Respuestas</th>
-      </thead>
-      <tbody id="lista-temas"></tbody>
-    </table>
+    <section class="margin-top">
+      <table class="bordered responsive-table container" >
+        <thead>
+          <th>Autor</th>
+          <th>Tema</th>
+          <th>Respuestas</th>
+        </thead>
+        <tbody id="lista-temas"></tbody>
+      </table>
+    </section>
 
     <!-- Modal Agregar Tema -->
     <div id="modal1" class="modal">
@@ -60,6 +63,21 @@
         </div>
       </form>
     </div>
+
+    <!-- Modal de detalles de tema -->
+    <section id="modalInfo" class="modal">
+      <div class="modal-content">
+        <h4>Detalles de tema</h4>
+          <h6>Autor: <span><small id="autor"> </small> </span> </h6>
+          <h6>Tema: <span><small id="tema"> </small> </span></h6>
+          <h6>Respuestas: <span><small id="respuesta"> </small> </span> </h6>
+      </div>
+      <div class="modal-footer">
+        <a class=" modal-action modal-close btn halfway-fab waves-effect waves-light">
+          <i class="material-icons">close</i>
+        </a>
+      </div>
+    </section>
 
 
     <!-- jQuery -->
