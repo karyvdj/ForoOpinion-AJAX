@@ -8,6 +8,7 @@ var cargarPagina = function(){
   $('.modal').modal();
   cargarTemas();
   $("#agregar-btn").click(agregarTema);
+  $("#busqueda").submit(filtrarTemas);
 }
 
 var plantillaTema = "<tr>"+
@@ -44,8 +45,18 @@ var agregarTema = function (e) {
 
   $.post(api.url, {author_name: $obtenerAutor, content: $obtenerMensaje }, function (tema) {
     crearTema(tema);
-    // $("#modal1").modal("hide");
+
   });
+};
+
+var filtrarTemas = function (e) {
+	e.preventDefault();
+	var $busqueda = $("#buscar").val().toLowerCase();
+  var $autor = tema.author_name;
+	var $temaFiltrados = $autor.filter(function (temas) {
+		return temas.author_name.toLowerCase().indexOf($busqueda) >= 0;
+	});
+crearTema($temaFiltrados);
 };
 
 $(document).ready(cargarPagina);
