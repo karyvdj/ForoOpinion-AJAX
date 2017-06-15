@@ -41,8 +41,10 @@ var crearTema = function (tema) {
   $plantillaFinal += plantillaTema.replace("__autor__", $autor)
   .replace("__mensaje__", $mensaje)
   .replace("__respuestas__", $respuestas)
+  .replace("__id__", $id)
 
   $listaTemas.append($plantillaFinal);
+  // console.log($plantillaFinal)
 };
 
 var agregarTema = function (e) {
@@ -63,6 +65,7 @@ var agregarTema = function (e) {
 var filtrarTemas = function (e) {
 	e.preventDefault();
 	var $busqueda = $("#buscar").val().toLowerCase();
+
   var $mensaje = tema.content;
 	var $temaFiltrados = $mensaje.filter(function (temas) { //temas no esta definido
 		return temas.content.toLowerCase().indexOf($busqueda) >= 0;
