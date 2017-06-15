@@ -4,17 +4,60 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FORO</title>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  	<link rel="stylesheet" href="css/materialize.min.css">
   </head>
   <body>
+    <nav>
+      <div class="nav-wrapper amber darken-1">
+        <a href="#" class="brand-logo center valign-wrapper">
+  				Foro Lab
+  			</a>
+  			<a class="btn-floating btn-large halfway-fab waves-effect waves-light pink accent-3" href="#modal1">
+          <i class="material-icons">add</i>
+        </a>
+      </div>
+    </nav>
 
-    <h1>Aqui van todos los temas</h1>
-    
+    <table class="bordered container">
+      <thead>
+        <th>Tema</th>
+        <th>Autor</th>
+        <th>Respuestas</th>
+      </thead>
+      <tbody id="lista-temas"></tbody>
+    </table>
+
+    <!-- Modal Agregar Tema -->
+    <div id="modal1" class="modal">
+      <form id="formulario">
+        <div class="modal-content">
+          <h4>Nuevo tema</h4>
+          <br>
+          <div class="input-field">
+            <input id="texto-autor" type="text" class="validate">
+            <label for="autor">Autor</label>
+          </div>
+          <div class="input-field">
+            <input id="texto-mensaje" type="text" class="validate">
+            <label for="mensaje">Mensaje</label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-action modal-close waves-effect waves-light btn" id="agregar-btn">Agregar</a>
+        </div>
+      </form>
+    </div>
+
+
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    
+    <script src="js/materialize.min.js"></script>
     <script src="js/functions.js"></script>
     <script src="js/main.js"></script>
-    
+
   </body>
 </html>
