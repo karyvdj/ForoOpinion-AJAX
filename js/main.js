@@ -10,16 +10,16 @@ var cargarPagina = function(){
   $('.modal').modal();
   cargarTemas();
   $("#agregar-btn").click(agregarTema);
-  $("#busqueda").submit(filtrarTemas);
-  $(document).on("click",$info,obtenerDatos);
+  // $("#busqueda").submit(filtrarTemas);
+  // $(document).on("click",$info,obtenerDatos);
 }
 
-var plantillaTema = "<tr data-id='__id__'>"+
+var plantillaTema = "<tr>"+
           "<td>__autor__</td>"+
           "<td>__mensaje__</td>"+
           "<td>__respuestas__</td>"+
           "<td>"+
-            "<a class='waves-effect waves-light' id='info' href='#modalInfo'><i class='material-icons'>visibility</i></a>"+
+            "<a class='waves-effect waves-light' id='info' href='verTopic.html?topic_id=__id_'><i class='material-icons'>visibility</i></a>"+
           "</td>"+
         "</tr>";
 
@@ -62,22 +62,22 @@ var agregarTema = function (e) {
   });
 };
 
-var filtrarTemas = function (e) {
-	e.preventDefault();
-	var $busqueda = $("#buscar").val().toLowerCase();
-
-  var $mensaje = tema.content;
-	var $temaFiltrados = $mensaje.filter(function (temas) { //temas no esta definido
-		return temas.content.toLowerCase().indexOf($busqueda) >= 0;
-	});
-crearTema($temaFiltrados);
-};
-
-function obtenerDatos(){
-  var temaId = $(this).closest("tr").data("id");
-  console.log(temaId);
-  var urlTema = api.url + temaId;
-  console.log(urlTema);
+// var filtrarTemas = function (e) {
+// 	e.preventDefault();
+// 	var $busqueda = $("#buscar").val().toLowerCase();
+//
+//   var $mensaje = tema.content;
+// 	var $temaFiltrados = $mensaje.filter(function (temas) { //temas no esta definido
+// 		return temas.content.toLowerCase().indexOf($busqueda) >= 0;
+// 	});
+// crearTema($temaFiltrados);
+// };
+//
+// function obtenerDatos(){
+//   var temaId = $(this).closest("tr").data("id");
+//   console.log(temaId);
+//   var urlTema = api.url + temaId;
+//   console.log(urlTema);
 
   // $.getJSON(urlTema,function(response){
   //   var $autor= response.author_name;
@@ -93,7 +93,7 @@ function obtenerDatos(){
   //     respuesta: $respuestas
   //   });
   // });
-}
+// }
 //
 // function MostrarInfo(objeto){
 //   var $autor = $("#autor");
